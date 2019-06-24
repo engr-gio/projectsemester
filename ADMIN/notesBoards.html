@@ -1,0 +1,173 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="icon" href="../img/icon.png">
+    <link rel="stylesheet" href="dashboardCss.css">
+    <link rel="stylesheet" href="adminCss.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>Notices
+    </title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg  navbar-light bg-info">
+        <a class="navbar-brand text-white" href="">Navbar</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link text-white p-3 mr-2" href="/ADMIN/adminDashboard.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+              
+                <li class="nav-item">
+                        <a class="nav-link text-white p-3 mr-2" href="notesBoards.html">Notices Board</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white p-3 mr-2" href="Designers.html">Designers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white p-3 mr-2" href="Jobs.html">Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white p-3 mr-2" href="aboutUs.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white p-3 mr-2" href="contactUs.html">Contact Us</a>
+                    </li>    
+                    <li class="nav-item">
+                            <a class="nav-link text-white p-3 mr-2" href="/index.html">Logout</a>
+                      </li>    
+              
+  </ul>
+        </div>
+
+ 
+          
+        </div>
+    </nav>
+    <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#"><i class="fas fa-home mr-3"></i>Home</a>
+            <a href="#"><i class="fas fa-users-cog mr-3"></i>Admin</a>
+        
+            <a href="#"><i class="fas fa-user-friends mr-3" ></i>Users</a>
+            <a href="#"><i class="fas fa-sign-out-alt mr-3"></i>Log out</a>
+        </div>
+        
+        
+        
+        <div id="main">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        
+        </div>
+        <button class="btn btn-lg btn-info mt-5 ml-3" data-toggle="modal" data-target=".modal">Add Notices
+        </button>
+    </div>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card ">
+                    <div class="card-header bg-info ">
+                        <h4 class="latest-post text-white">
+                            <i class=" fas fa-exclamation-circle mr-2">
+                            </i>Notices
+                        </h4>
+                    </div>
+                    <table class="table table-striped table-bordered table-responsive-sm ">
+                        <thead class="thead-light ">
+                        <tr>
+                            <th>No
+                            </th>
+                            <th>Description
+                            </th><th>Deleted
+                            </th>
+                        </tr>
+                        </thead>
+                    
+                            <tbody>
+                            <tr>
+                                <td>
+                                    01
+                                </td>
+                                <td>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam provident omnis obcaecati consectetur animi! Earum sed error, facere assumenda placeat saepe. Non aliquam ratione velit saepe excepturi voluptatum!
+                                </td>
+                                <td>
+                                    <a href=""
+                                       class="btn  btn-danger">Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            </tr>
+                            </tbody>
+                            <?php
+                        }
+                        ?>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    }
+</script>
+<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-info text-white">
+                <h1 class="">
+                    <i class=" fas fa-exclamation-circle mr-1">
+                    </i>Notice
+                </h1>
+                <button class="close" data-dismiss="modal">&times;
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="notesPhp.php">
+                    <div class="form-group">
+                        <label>Description
+                        </label>
+                        <textarea name="noticesDescription" class="form-control" rows="4" cols="50" >
+              </textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" name="submitNotices" value="Add" class="text-white btn btn-block btn-lg bg-success" >
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card bg-info text-center  mt-5 fixed-bottom ">
+    <div class="card-footer text-white">
+        <p class="lead "> All Rights Reserved @ Jamal Sheikh Ali 
+        </p>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../js/jquery-3.3.1.slim.min.js">
+</script>
+<script src="../js/popper.min.js">
+</script>
+<script src="../js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>
